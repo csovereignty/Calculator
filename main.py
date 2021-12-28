@@ -1,13 +1,15 @@
 from functions import *
 
-print(object.add(1,7))
-
 calcfunctions.method()
 
 running = True
 
-while running == True:
-    while(True):
-        print_menu()
-        option = int(input("Enter your selection: "))
-        option_select(option)
+while(running):
+    option = None
+    print_menu()
+    option = int(input("Enter your selection: "))
+    print(f'You have selected option #{option}')
+    if option == 0:
+        running = False
+    else:
+        option = option_select(option)  
