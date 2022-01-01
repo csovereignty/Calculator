@@ -7,13 +7,14 @@ running = True
 
 #Main Window
 mainWindow = Tk()
-#mainWindowTitle = Label(mainWindow, text="Calculatorialism")
-#mainWindowTitle.pack()
-#mainWindow.mainloop()
-mainWindow.geometry('100x100')
+mainWindow.title('Calculatorism')
+mainWindow.geometry('400x300')
+mainWindow.config(bg='#F2B33D')
 
-btn = Button(mainWindow, text = "Click me!", bd = '5', command=mainWindow.destroy)
-btn.pack(side = 'top')
+frame = Frame(mainWindow, bg='#F2B33D')
+#example of padding
+Button(mainWindow, text = "Addition", command=print_menu).grid(row=0, column=0, padx=10, pady=10, sticky='ew')
+Button(mainWindow, text = "Subtraction", command=None).grid(row=0, column=1)
 
 mainWindow.mainloop()
 
@@ -25,4 +26,4 @@ while(running):
     if option == 0:
         running = False
     else:
-        option = option_select(option)  
+        option = option_select(option)
