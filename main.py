@@ -1,29 +1,55 @@
 from functions import *
 from tkinter import *
 
-calcfunctions.method()
+#calcfunctions.method()
+
+def menu_select():
+    user_selection = var.get()
+    if user_selection == 1:
+        msg = f'It works, 1 was entered!'
+    else:
+        msg = f'Value other than 1 was entered, but it kind of works!'
+    disp.set(msg)
 
 running = True
 
 #Main Window
-mainWindow = Tk()
-mainWindow.title('Calculatorism')
-mainWindow.geometry('400x300')
-mainWindow.config(bg='#F2B33D')
+ws = Tk()
+ws.title('Calculatorialism')
+ws.geometry('600x400')
+ws.config(bg='#5671A6')
 
-frame = Frame(mainWindow, bg='#F2B33D')
-#example of padding
-Button(mainWindow, text = "Addition", command=print_menu).grid(row=0, column=0, padx=10, pady=10, sticky='ew')
-Button(mainWindow, text = "Subtraction", command=None).grid(row=0, column=1)
+var = IntVar()
+disp = StringVar()
 
-mainWindow.mainloop()
+Label(
+    ws,
+    text='Calculatorialism',
+    font=('sans-serif', 20),
+    relief=SOLID,
+    padx=10,
+    pady=10,
+    bg='#F27D16'
+).pack(pady=(10,0))
 
-while(running):
-    option = None
-    print_menu()
-    option = int(input("Enter your selection: "))
-    print(f'You have selected option #{option}')
-    if option == 0:
-        running = False
-    else:
-        option = option_select(option)
+Entry(
+    ws,
+    textvariable=var,
+    font=('sans-serif', 10)
+).pack(pady=(50,10))
+
+Button(
+    ws,
+    text='Enter selection',
+    font=('sans-serif', 18),
+    command=menu_select
+).pack()
+
+Label(
+    ws,
+    textvariable=disp,
+    bg='#5671A6',
+    font=('sans-serif', 14)
+).pack(pady=(20,0))
+
+ws.mainloop()
