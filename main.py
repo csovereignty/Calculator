@@ -22,13 +22,18 @@ def clear():
     expression = ""
     equation.set("")
 
+def display_answer():
+    value = expression_field.get()
+
+    disp_tf.insert(0,f'{value}!!!!')
+
 running = True
 
 #Main Window
 ws = Tk()
 ws.title('Calculatorialism')
-ws.geometry('270x150')
-ws.config(bg="black")
+ws.geometry('470x350')
+ws.config(bg="navy")
 var = IntVar()
 equation = StringVar()
 
@@ -101,5 +106,13 @@ clear.grid(row=5, column='1')
 Decimal= Button(ws, text='.', fg='black', bg='red',
                     command=lambda: press('.'), height=1, width=7)
 Decimal.grid(row=6, column=0)
+
+#in progress, trying to get answer displayed elsewhere, may need to abandon grid layout
+disp_tf = Entry(
+    ws,
+    width=7,
+    font=('helvetica', 20)
+)
+disp_tf.grid(row=7, column=0)
 
 ws.mainloop()
