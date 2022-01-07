@@ -12,3 +12,6 @@ Next up:
 Adjust add and subtract to allow for more than two values (User defined perhaps?)
 Tinker more with offloading functions and the like to other files for practice
 Add more functions (Division, Multiplication, maybe more complex stuff too)
+
+
+Trying to sort out new fork
