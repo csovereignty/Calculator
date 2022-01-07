@@ -33,11 +33,7 @@ running = True
 ws = Tk()
 ws.title('Calculatorialism')
 ws.geometry('470x350')
-<<<<<<< HEAD
 ws.config(bg="navy")
-=======
-ws.config(bg="black")
->>>>>>> 1212a62681b531f6e568bc9dfacaf8e91d39a831
 var = IntVar()
 equation = StringVar()
 
