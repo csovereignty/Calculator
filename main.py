@@ -22,6 +22,7 @@ def clear():
     expression = ""
     equation.set("")
 
+#why isn't this displaying the answer, probably grid related?
 def display_answer():
     value = expression_field.get()
 
@@ -37,7 +38,7 @@ ws.config(bg="navy")
 var = IntVar()
 equation = StringVar()
 
-expression_field = Entry(ws, textvariable=equation, font="Helvetica 20 bold")
+expression_field = Entry(ws, textvariable=equation, font="Helvetica 10 bold")
 expression_field.grid(columnspan=4, ipadx=170, ipady=70) #was 70
 button1 = Button(ws, text=' 1 ', fg='black', bg='red', font="Helvetica 15 bold",
                     command=lambda: press(1), height=1, width=10)
