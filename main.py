@@ -33,14 +33,14 @@ running = True
 #Main Window
 ws = Tk()
 ws.title('Calculatorialism')
-ws.geometry('470x350')
+ws.geometry('320x250')
 ws.config(bg="navy")
 var = IntVar()
 equation = StringVar()
 
 expression_field = Entry(ws, textvariable=equation, font="Helvetica 10 bold")
-expression_field.grid(columnspan=4, ipadx=170, ipady=70) #was 70
-button1 = Button(ws, text=' 1 ', fg='black', bg='red', font="Helvetica 15 bold",
+expression_field.grid(columnspan=4, ipadx=70, ipady=10) #was 70
+button1 = Button(ws, text=' 1 ', fg='black', bg='red',
                     command=lambda: press(1), height=1, width=10)
 button1.grid(row=2, column=0)
  
@@ -108,12 +108,13 @@ Decimal= Button(ws, text='.', fg='black', bg='red',
                     command=lambda: press('.'), height=1, width=10)
 Decimal.grid(row=6, column=0)
 
-#in progress, trying to get answer displayed elsewhere, may need to abandon grid layout
+#Need to figure out how to only display answer
 disp_tf = Entry(
     ws,
-    width=7,
+    textvariable=equation,
+    width=4,
     font=('helvetica', 20)
 )
-disp_tf.grid(row=7, column=0)
+disp_tf.grid(columnspan=4, ipadx=70, ipady=10)
 
 ws.mainloop()
